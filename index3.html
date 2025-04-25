@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Les Bases - Le Lua dans Garry's Mod</title>
+		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="icon" type="medias/lua-icon-2048x2048-iud9q772.ico" href="medias/lua-icon-2048x2048-iud9q772.ico">
+	</head>
+	<body id="basebody">
+		<nav>
+			<ul>
+				<li><a href="index.html">Acceuil</a></li>
+				<li><a href="index1.html">Histoire</a></li>
+				<li><a href="index2.html">Les Bases</a></li>
+				<li><a href="index3.html"> • Les messages Nets</a></li>
+			</ul>
+		</nav>
+		<h1>Les messages Nets</h1>
+		<p>Dans Garry's Mod, il est important de savoir faire des liens entre le côté Client et Serveur, par exemple pour qu'une interface (Client) ait des repercutions avec les autres joueurs sur le serveur (Server)</p>
+		<p>Pour ce faire on utilise la librairie Net</p>
+		<p>La première étape conciste à envoyer un message et éventuellement des données au serveur depuis le Client</p>
+		<h3>Voici le script côté Client</h3>
+		<img src="medias/netlib_client.png" alt="Côté Client explications Net">
+		<p>Dans cet exemple l'instruction <strong>net.Start("Test")</strong> permet de créer un message net. Ensuite on met à la suite <strong>net.WriteString("un message")</strong> pour définir une donnée (ici une valeur string) que l'on veut envoyer au serveur. Pour finir, l'instruction <strong>net.SendToServer()</strong> permet simplement d'envoyer le message avec ses données au serveur.</p>
+		<h3>Voici le script côté Serveur</h3>
+		<img src="medias/netlib_server.png" alt="">
+		<p><strong>Attention !</strong> Il est obligatoire de définir dans le côté Serveur "l'existance" du message "test" avec l'instruction <strong>util.AddNetworkString("test")</strong>.</p>
+		<p>Ensuite, avec <strong>net.Receive("test", function() ...</strong> on définir une fonction qui sera executée lorsque le serveru recevera le message.</p>
+		<p>Avec <strong>local var = net.ReadString()</strong> on définit la variable "var" par la donnée envoyer avec le client ("un message")</p>
+		<p>Puis on print la valeur. Donc si la valeur sera affichée dans la console du serveur.</p>
+		<p>Cependent les deux scripts ci-dessus ne marchent pas à eux seuls, voici un script complet :</p>
+		<img src="medias/complet.png" alt="Script complet">
+		<br>
+		<p>Cependent je n'ai pas pu vous parler des hooks, je vous invite donc à consulter <a href="https://wiki.facepunch.com/gmod/Hook_Library_Usage">cette page</a> du Wiki afin d'apprendre à utiliser les hooks.</p>
+		<p>Pour pus d'inforations, consultez le <a href="https://wiki.facepunch.com/gmod">Wiki de Garry's Mod</a>, vous y trouverez toutes les inofrmations sur le gLua (fonctions, variable, messages nets, interfaces, etc ...).</p>
+		<br>
+	</body>
+</html>

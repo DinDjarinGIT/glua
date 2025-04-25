@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Les Bases - Le Lua dans Garry's Mod</title>
+		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="icon" type="medias/lua-icon-2048x2048-iud9q772.ico" href="medias/lua-icon-2048x2048-iud9q772.ico">
+	</head>
+	<body id="basebody">
+		<nav>
+			<ul>
+				<li><a href="index.html">Acceuil</a></li>
+				<li><a href="index1.html">Histoire</a></li>
+				<li><a href="index2.html"> • Les Bases</a></li>
+				<li><a href="index3.html">Les messages Nets</a></li>
+			</ul>
+		</nav>
+		<h1>Client, Server, Shared, c'est quoi ?</h1>
+		<p>Dans Garry's Mod quand on aprrend le gLua, il est important de connaitre la différence entre le côté Client, Server (Serveur), et Shared (Partagé). Ces trois termes constituent la base même du code</p>
+		<p>Dans le Wiki, pour bien voir quelle fonction s'execute dans quelle côté, un carré jaune s'affiche pour le côté Client, bleu pour le côté Serveur, et vert pouyr le côté Partagé. Notez qu'une fonction (ou autre) peut être executable dans plusieurs côtés en même temps.</p>
+		<h2>Le côté Client</h2>
+		<p>Le côté Client constitut l'ensemble du code qui va être téléharger et executer par les joueurs.</p>
+		<p>Ca peut être des interfaces, des commandes, ou plain d'autre action qui doivent avoir des actions sur le joueur ou qui doivent avoir un impact dessus</p>
+		<h2>Le côté Server (Serveur) </h2>
+		<p>Le côté Serveur constitut tous les scripts qui doivent être executés par le serveur, ils sont très impotants car ils permettent de réaliser un grand nombre d'action</p>
+		<h2>Le côté Shared (Partagé)</h2>
+		<p>Il s'agt d'un côté asset particulier puisqu'il est lut est téléchargé par le client et le serveur, on y met du code qui est nessecaire pour les deux côtés précédents.</p>
+		<p>Par exemple, un fichier de configuration d'un mod se fera dans le partagé car les variables ou fonctions qui le constiturons devrons être accessibles pour le serveur et le client</p>
+		<h2>Le nommage et la structure des Addons (Mods)</h2>
+		<p></p>
+		<br>
+		<h3> • Structure d'un Addon</h3>
+		<br>
+		<p>Une fois dans le fichier "addons" de votre jeu, la première étape est de créer un fichier "lua" et dedans "autorun", cela fera en sorte que le jeu ira automatquement dans le fichier autorun pour y lire tous les scripts contenuent dedans.</p>
+		<p>Une fois dans "addons/nom de ton mod/lua/autorun", nous pouvons créer notre premier script. Appelons le "test_loader.lua".</p>
+		<p>Un Loader est un script présent dans le plupart des addons Garry's Mod, il permet de lancer le mod proprement, ou bien de dire au serveur ou au client de lire des fichiers spécifiques qui ne seraient pas lus par défaut.</p>
+		<p>Voici un exemple de code simple :</p>
+		<img src="medias/lua_basic.png" alt="Un script basique en gLua">
+		<p></p>
+		<br>
+		<h3> • Nommage d'un addon</h3>
+		<br>
+		<p>Le nommage d'un addon peut sembler peut important mais il est essentiel de ne pas négliger cette étape.</p>
+		<p>Effectivement, si on veut que notre addon soit chargé proprement par le Serveur et le Client. Le nom du fichier d'un addon doit être toujours en <strong>minuscules</strong>, sans <strong>caractères spéciaux</strong> et sans <strong>espaces</strong>.</p>
+		<p>Pour remplacer les espaces, on peut mettre des tirets du huit "_".</p>
+		<p>Exemple : "Addon Teste" n'est pas un nommage correcte, préférez "addon_test".</p>
+		<p>Voici le résultat avec le chemin d'accès :</p>
+		<img src="medias/loader_path.png" alt="Chemin fichier Loader">
+		<p>Pour pus d'inforations, consultez le <a href="https://wiki.facepunch.com/gmod">Wiki de Garry's Mod</a>, vous y trouverez toutes les inofrmations sur le gLua (fonctions, variable, messages nets, interfaces, etc ...).</p>
+		<br>
+	</body>
+</html>
